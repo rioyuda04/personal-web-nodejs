@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>welcome</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>
+    </head>   
+    <body class="bd d-flex flex-wrap">
+        {{!-- call navbar --}}
+        {{> navbar}}
+        {{!-- end --}}
+        <!-- Content Index -->
+        <div class="d-flex p-lg-5 m-lg-5 bg-light shadow rounded-3 my-lg-5">
+            <div class="left w-100 h-auto pe-lg-5 d-flex justify-content-start flex-wrap align-content-center">
+                <h3 class="p-0 m-0">Hi Welcome to my hut</h3>
+                <p class="p-0 mt-lg-4 w-100 h-auto fst-normal">
+                    Life is not permanent, if know about life you're must learn how
+                    for help somebody. Probably in this way we're can enjoy and fun
+                    but do you understand others people can't smile or little smile he can't.
+                    This is a country not fine condition, one day someone will come here.
+                    Talk about life's and the end moment i hope someone will understand.
+                </p>
+
+                <div class="d-flex w-100 align-items-center mt-lg-5">
+                    <a href="contact">
+                        <button class="btn d-flex btn-outline-dark rounded-pill fst-normal py-lg-2 px-lg-4" 
+                            type="button" name="button">contact
+                        </button>
+                    </a>
+                    <div class="d-flex align-items-center mx-lg-3 gap-2">
+                        <a href="#">download CV</a>
+                        <i class="bi bi-download fs-5"></i>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mt-lg-4 fs-2 gap-3">
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="right h-auto right d-flex align-items-center position-relative">
+                <img class="d-flex align-items-center h-auto w-100 h-auto shadow rounded-3" 
+                    src="assets/images/photo2.jpg"/>
+                <div class="tx-profile d-flex flex-wrap w-100 position-absolute 
+                    align-items-center bg-light rounded-bottom bottom-0">
+                    <h2 class="d-flex w-100 align-items-center justify-content-center m-0 p-0 fs-5">
+                        Rio Yudayanto
+                    </h2>
+                    <p class="d-flex w-100 align-items-center justify-content-center m-0 p-0">
+                        Fullstack Developer
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- End Content Index -->
+
+        <!-- Content My Project -->
+        <div class="d-flex w-100 h-auto min-vh-100 bg-light align-self-start justify-content-center px-4 mt-lg-5">
+            <div class="d-flex w-100 flex-wrap align-items-center align-self-start">
+                <div class="d-flex w-100 justify-content-center my-md-4">
+                    <h2>My Project</h2>
+                </div>
+                <div id="contents" class="pj-content d-flex w-100 align-self-start flex-wrap justify-content-center gap-3 mb-5">
+                    
+                <!-- Project View -->
+                {{#each dataBlog}}
+                    <div class="pj-view d-flex flex-wrap align-item-center align-self-start align-content-between shadow-lg rounded-3 p-3 h-auto">
+                        <div class="d-flex w-100" style="height: 280px;">
+                            <a href="/myproject-detail/{{@index}}">
+                                <img class="p-img d-flex w-100 rounded-3" id="photo" src="assets/images/{{this.image}}" alt="photo"/>
+                            </a>
+                        </div>
+                        <!-- Group Project Name and Duration -->
+                        <div class="d-flex w-100 flex-wrap mb-3">
+                            <div class="d-flex w-100">
+                                <a href="/myproject-detail">
+                                    <label style="cursor: pointer;">
+                                        {{this.projectname}}
+                                    </label>
+                                </a>
+                            </div>
+                            <div class="p-duration d-flex w-100">
+                                <label for="">
+                                    Duration : {{this.dataYear}}{{this.dataMonth}}{{this.dataDay}}
+                                </label>
+                            </div>
+                        </div>
+                        <!-- End -->
+                        <!-- Group Project Description, Icon, Button -->
+                        <div class="d-flex w-100 h-auto flex-wrap">
+                            <div class="card-text p-descript">
+                                <p>
+                                    {{this.description}}
+                                <p>
+                            </div>
+                            <div class="p-icon-tech d-flex w-100 align-items-center align-content-center gap-3 mb-md-5" 
+                                id="createIcon">
+                                <i class="fa fa-{{this.android}}"></i>
+                                <i class="fa fa-{{this.apple}}"></i>
+                                <i class="fa fa-{{this.windows}}"></i>
+                                <i class="fa fa-{{this.linux}}"></i>
+                            </div>
+                        </div>
+                        <div class="p-btn d-flex w-100 gap-2">
+                            <a href="/updateproject/{{@index}}" class="d-flex w-100">
+                                <button class="d-flex w-100 rounded-3 justify-content-center btn btn-outline-success" 
+                                    type="button" name="edit">edit
+                                </button>
+                            </a>
+                            <a href="/deleteproject/{{@index}}" class="d-flex w-100">
+                                <button class="d-flex w-100 rounded-3 justify-content-center btn btn-outline-danger" 
+                                    type="button" name="delete">delete
+                                </button>
+                            </a>
+                        </div>
+                        <!-- End -->
+                    </div>
+                {{/each}}  
+                <!-- End Project View -->
+
+                </div>
+            </div>   
+        </div>
+        <!-- End Content My Project -->
+        
+    </body>
+</html>

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* initialize all */
+*{
+    font-family: 'Poppins';
+}
+/* end */
+
+/* all tag */
+a,a:link{
+    text-decoration: none;
+    color: #161616 !important;
+}
+/* end */
+/* View Index */
+/* body */
+.bd{
+    background-color: rgb(190, 208, 212);
+}
+/* end */
+
+/* content left */
+.left{
+    text-align: justify;
+}
+/* end*/
+
+/* content right */
+.right{
+  width: 40%;
+}
+.tx-profile{
+    height: 8vh;
+}
+/* end */
+/* End View Index */
+
+/* View My Project*/
+/* Body */
+.pj-content{
+    min-height: 69vh;
+}
+/* End */
+/* Page Project View */
+.pj-view{
+    min-width: 290px;
+    width: 25%;
+}
+.p-img{
+    object-fit: cover;
+}
+/* Group Project Name and Duration  */
+.p-duration label{
+    font-size: 12px;
+    color: #888888;
+}
+/* End */
+/* Group Project Description, Icon, Button */
+.p-descript{
+    font-size: 14px;
+}
+.p-icon-tech i{
+    font-size: 21px;
+}
+/* End */
+/* End View My Project */

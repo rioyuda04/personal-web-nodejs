@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/myproject-detail.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+</head>
+<body>
+    {{!-- call navbar --}}
+    {{> navbar}}
+    {{!-- end --}}
+    {{#each dataBlog}}
+    <div class="sub-bd d-flex w-100 justify-content-center align-items-center align-self-start flex-wrap">
+        <div class="d-flex w-100 justify-content-center align-self-start">
+            <h2>{{this.projectname}}</h2>
+        </div>
+        <div class="profile d-flex w-100 justify-content-center align-self-start">
+            <div class="d-flex w-50 h-auto">
+                <img class="d-flex w-100" style="height: 400px;" src="assets/images/{{this.image}}" alt="image"/>
+            </div>
+            <div class="d-flex w-50 justify-content-center align-self-start flex-wrap gap-3">
+                <div class="d-flex w-100 justify-content-start flex-wrap align-self-start gap-2">
+                    <label id="h-text-d" class="d-flex w-100 fs-5">Duration</label>
+                    <div id="calendar" class="d-flex w-100 align-items-center gap-3">
+                        <i class="fa fa-calendar"></i>
+                        <label> {{this.startdate}} - {{this.enddate}} </label>
+                    </div>
+                    <div id="clock" class="d-flex w-100 align-items-center gap-3">
+                        <i class="fa fa-clock-o"></i>
+                        <label>  
+                            {{this.dataYear}}{{this.dataMonth}}{{this.dataDay}}
+                        </label>
+                    </div> 
+                </div>
+                <div class="d-flex w-100 justify-content-start flex-wrap gap-2">
+                    <label id="h-text-t" class="d-flex w-100 fs-5">Technologies</label>
+                    <div id="content-icon" class="d-flex w-100 align-self-start">
+                        <div id="left" class="d-flex flex-wrap gap-3">
+                            <span id="android" class="d-flex w-100 align-items-center gap-2">
+                                <i class="fa fa-{{this.android}}"></i>
+                                <label>{{this.android}}</label>
+                            </span>
+                            <span id="apple" class="d-flex w-100 align-items-center gap-2">
+                                <i class="fa fa-{{this.apple}}"></i>
+                                <label>{{this.apple}}</label>
+                            </span>
+                        </div>
+                        <div id="right" class="d-flex flex-wrap gap-3">
+                            <span id="windows" class="d-flex w-100 align-items-center gap-2">
+                                <i class="fa fa-{{this.windows}}"></i>
+                                <label>{{this.windows}}</label>
+                            </span>
+                            <span id="linux" class="d-flex w-100 align-items-center gap-2">
+                                <i class="fa fa-{{this.linux}}"></i>
+                                <label>{{this.linux}}</label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-text w-100">
+            <p>
+                {{this.description}}
+            </p>
+        </div>
+    </div>
+    {{/each}}
+
+
+</body>
+
+
+</html>

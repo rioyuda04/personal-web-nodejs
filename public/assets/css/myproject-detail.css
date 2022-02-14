@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* Initialize all */
+*{
+    font-family: 'Poppins';
+}
+.fa{
+    font-size: 35px!important;
+}
+/* body */
+body{
+    background-color: rgb(190, 208, 212);
+}
+/* end */
+/* sub body */
+.sub-bd{
+    padding: 60px;
+    gap: 50px;
+}
+/* Profile */
+.profile{
+    gap: 50px;
+}
+/* Photo / Image */
+.photo img{
+    min-width: 400px;
+    height: 60vh;
+}
+/* end */
+/* Paragraf content */
+.p-text{
+    text-align: justify; 
+}
+/* end */

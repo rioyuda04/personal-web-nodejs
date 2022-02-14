@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/myproject.css">
+</head>
+<body class="bg">
+    {{!-- call navbar --}}
+    {{> navbar}}
+    {{!-- end --}}
+    <!-- Page Add My Project -->
+    <div class="d-flex w-100 justify-content-center py-5">
+        <form class="d-flex w-50 h-auto flex-wrap align-items-center gap-3"
+            action="/home" method="POST">
+            <h3 class="text-uppercase d-flex w-100 justify-content-center">Add My Project</h3>
+            <!-- input project name -->
+            <div class="form-group d-flex w-100 flex-wrap">
+                <label for="projectName">Project Name</label>
+                <input name="projectname" type="text" class="form-control shadow" id="projectName">
+            </div>
+            <!-- input project date -->
+            <div class="d-flex w-100 gap-3">
+                <!-- left -->
+                <div class="form-group d-flex w-100 flex-wrap">
+                    <label  class="d-flex w-100" 
+                        for="startDate">Start Date</label>
+                    <input name="startdate" class="form-control d-flex w-100 shadow" 
+                        type="date" id="startDate" value=""/>
+                </div>
+                <!-- right -->
+                <div class="form-group d-flex w-100 flex-wrap">
+                    <label class="d-flex w-100"
+                        for="endDate">End Date</label>
+                    <input name="enddate" class="form-control d-flex w-100 shadow"
+                        type="date" id="endDate" value=""/>
+                </div>
+            </div>
+
+            <!-- input description -->
+            <div class="form-group d-flex w-100 flex-wrap">
+                <label class="d-flex w-100" 
+                    for="descript">Description</label>
+                <textarea name="description" class="form-control d-flex w-100 shadow" rows="5" id="descript" required></textarea>     
+            </div>
+            <!-- checkbox technologies -->
+            <div class="d-flex w-100 flex-wrap">
+                <label class="d-flex w-100 align-items-center">Technologies</label>
+                <!-- checkbox left -->
+                <div class="d-flex w-100">
+                    <div class="d-flex w-100 gap-1 flex-wrap">
+                        <div class="form-check d-flex w-100 gap-2">
+                            <input name="android" class="form-check-input" type="checkbox" value="android" id="android">
+                            <label class="form-check-label" for="android">Android</label>
+                        </div>
+                        <div class="form-check d-flex w-100 gap-2">
+                            <input name="apple" class="form-check-input" type="checkbox" value="apple" id="apple">
+                            <label class="form-check-label" for="apple">Apple</label>
+                        </div>
+                    </div>
+                    <!-- checkbox right -->
+                    <div class="d-flex w-100 gap-1 flex-wrap">
+                        <div class="form-check d-flex w-100 gap-2">
+                            <input name="windows" class="form-check-input" type="checkbox" value="windows" id="windows">                        
+                            <label class="form-check-label" for="windows">Windows</label>
+                        </div>
+                        <div class="form-check d-flex w-100 gap-2">
+                            <input name="linux" class="form-check-input" type="checkbox" value="linux" id="linux">
+                            <label class="form-check-label" for="linux">Linux</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- upload file image -->
+            <div class="d-flex w-100">
+                <input  name="image" class="form-control shadow" type="file" id="choose">
+                <label class="form-label" for="choose"></label>
+            </div>
+            <!-- button submit -->
+            <div class="d-flex w-100 justify-content-end">
+                <button type="submit" class="btn btn-outline-dark">submit</button>
+            </div>
+        </form>
+    </div>
+    <!-- End -->
+
+
+</body>
+
+
+</html>
